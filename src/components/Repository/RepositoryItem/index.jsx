@@ -1,17 +1,34 @@
-/*
- * EXTERNAL DEPENDENCIES
+/**
+ * @file    Contains RepositoryItem component.
+ * @author  Ric Mershon from Road to GraphQL.
  */
+
+// External dependencies.
 
 import React from 'react';
 
-/*
- * INTERNAL DEPENDENCIES
+// Internal dependencies.
+
+import Link from '../../Link';
+import '../style.css';
+
+/**
+ * RepositoryItem: react functional component.
+ * 
+ * @param {string} name Name.
+ * @param {string} url URL.
+ * @param {string} descriptionHTML Description of the repository.
+ * @param {string} primaryLanguage Primary programming language.
+ * @param {string} owner Owner
+ * @param {string} stargazers Number of users who starred.
+ * @param {string} watchers Number of users watching.
+ * @param {string} viewerSubscription Number of users subscribed.
+ * @param {string} viewerHasStarred Viewer has starred.
+ * 
+ * @returns information from single repository.
  */
 
- import Link from '../../Link';
- import '../style.css';
-
- const RepositoryItem = ({
+const RepositoryItem = ({
     name,
     url,
     descriptionHTML,

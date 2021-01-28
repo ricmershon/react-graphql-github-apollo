@@ -1,18 +1,22 @@
-/*
- * EXTERNAL DEPENDENCIES
+/**
+ * @file    Entry point from index.js.
+ * @author  Ric Mershon from Road to GraphQL.
  */
 
-import React, { Component } from 'react';
+// EXTERNAL DEPENDENCIES
 
-/*
- * INTERNAL DEPENDENCIES
- */
+import React from 'react';
+
+// INTERNAL DEPENDENCIES
 
 import Profile from '../components/Profile';
 
-class App extends Component {
-    render() {
-        return <Profile />
-    }
-}
+/**
+ * App: React functional component entry point from index.js.
+ * 
+ * @returns Profile component.
+ */
+
+const App = () => <Profile />
+
 export default App;

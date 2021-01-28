@@ -1,6 +1,10 @@
-/*
- * EXTERNAL DEPENDENCIES
+/**
+ * @file    Contains application configuration and entry point.
+ * 
+ * @author  Ric Mershon from Road to GraphQL.
  */
+
+// EXTERNAL DEPENDENCIES
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -9,9 +13,7 @@ import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-/*
- * INTERNAL DEPENDENCIES
- */
+// INTERNAL DEPENDENCIES
 
 import App from './App/App.jsx';
 import './style.css';
@@ -41,6 +43,10 @@ const client = new ApolloClient({
     link: httpLink,
     cache
 })
+
+/**
+ * React entry point
+ */
 
 ReactDOM.render(
     <ApolloProvider client={ client }>

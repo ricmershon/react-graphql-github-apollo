@@ -4,28 +4,28 @@
 
 import React from 'react';
 import { Query } from 'react-apollo';
-import { GET_CURRENT_USER } from '../../constants/index';
+import { 
+    GET_CURRENT_USER,
+    GET_REPOSITORIES_OF_CURRENT_USER
+ } from '../../constants/index';
 
 /*
  * INTERNAL DEPENDENCIES
  */
 
+import RepositoryList from '../Repository';
 import Loading from '../Loading';
 
 const Profile = () => (
-    <Query query={ GET_CURRENT_USER }>
+    <Query query={ GET_REPOSITORIES_OF_CURRENT_USER }>
         {({ data, loading }) => {
-            const { viewer } = data;
-
+            const { viewer } = data ? data : false;
+            console.log(viewer);
+            
             if (loading || !viewer) {
                 return <Loading />
             }
-            
-            return (
-                <div>
-                    {viewer.name} {viewer.login}
-                </div>
-            )
+            return <RepositoryList repositories={viewer.repositories}/>
         }}
     </Query>
 )

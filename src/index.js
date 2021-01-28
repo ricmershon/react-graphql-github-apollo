@@ -13,7 +13,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
  * INTERNAL DEPENDENCIES
  */
 
-import App from './App/App';
+import App from './App/App.jsx';
 import './style.css';
 import reportWebVitals from './reportWebVitals';
 import { GITHUB_BASE_URL } from './constants/index';

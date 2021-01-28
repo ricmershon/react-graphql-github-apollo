@@ -3,11 +3,11 @@
  * @author  Ric Mershon from Road to GraphQL.
  */
 
-// External dependencies.
+// EXTERNAL DEPENDENCIES
 
 import React from 'react';
 
-// Internal dependencies.
+// INTERNAL DEPENDENCIES
 
 import Link from '../../Link';
 import '../style.css';

@@ -17,6 +17,7 @@ import {
  
 import RepositoryList from '../Repository';
 import Loading from '../Loading';
+import ErrorMessage from '../Error';
 
 /**
  * Profile: react functional component queries database with GraphQL
@@ -26,13 +27,16 @@ import Loading from '../Loading';
  * Uses render props pattern with the child as a function in order to
  * access the result of the query as an argument.
  * 
- * @returns Loading component while loading data, otherwise returns
- * RepositoryList component.
+ * @returns Loading component while loading data, ErrorMessage component
+ * if a query error occurs, otherwise returns RepositoryList component.
  */
 
 const Profile = () => (
     <Query query={ GET_REPOSITORIES_OF_CURRENT_USER }>
-        {({ data, loading }) => {
+        {({ data, loading, error }) => {
+            if (error) {
+                return <ErrorMessage />
+            }
             const { viewer } = data ? data : false;
             
             if (loading || !viewer) {
